@@ -83,7 +83,16 @@
 	<div id="footer">
 		<div class="footer_line"></div>
 		<div style="padding-top: 10px;">Copyright 2012 - MyRealTour.com</div>
+		<div class="footer_twitter">
+    <a href="https://twitter.com/kz_coder" class="twitter-follow-button" data-show-count="true" data-lang="en" >Follow @MyRealTour</a>
+	    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","tw	itter-wjs");</script>
+		</div>
 	</div>
+      
+	   <div class='footer_facebook'>
+         <div class="fb-like" data-href="http://www.myrealtour.com" data-width="450" data-show-faces="false" data-send="false"></div>
+       </div>
+
 	</div>	
 	<script type="text/javascript" rel="stylesheet" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.powerFloat.min.js"></script>
 	<script>
@@ -92,4 +101,17 @@
 	});
 	</script>
 </body>
+
+<div id="fb-root"></div>
+ <script>
+        (function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=403927466287238";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+ </script>
+
+
 </html>
