@@ -131,8 +131,6 @@ class PropertyController extends Controller
 		}
 		$model=$this->loadModel($id);
 		$modelUser=User::model()->findByPk($model->uid);
-		var_dump($modelUser->uid);
-		echo "<br/>";
 
 
 		$email = self::sendemailHelper(array('/property/'.$id));
@@ -221,7 +219,6 @@ class PropertyController extends Controller
 		}
 		/*****inbox end***/
 
-		exit();
 		
 		$this->render('view',array(
 			'model'=>$model,'modelUser'=>$modelUser,'modelEmail'=>$email[0],'hidden_to_uid'=>$email[1],
@@ -363,6 +360,7 @@ class PropertyController extends Controller
 			'userType'    => $userType
 		));
 	}
+
 	public function actionPropertysearch()
 	{
 		$this->render('propertysearch');

@@ -1248,6 +1248,7 @@ class UserController extends Controller
 
 	 public function actionCreatepropertyEmail($uid, $modelProperty)
 	 {
+		 $pid    =  $modelProperty->property_id;
 		 $type   =  $modelProperty->property_type;
 		 $price  =  $modelProperty->price;
 		 $house_size = $modelProperty->house_size;
@@ -1255,19 +1256,30 @@ class UserController extends Controller
 		 $baths  =  $modelProperty->baths;
 		 $levels =  $modelProperty->levels;
 		 $pool   =  $modelProperty->pool; 
+		 $fromEmail = 'info@myrealtour.com';
+		 $fromName  = 'MyRealTour';
 
-	     $sql = "select uid from user where property_type = ".$type." and beds = '".$beds."' and baths = '".$baths."' and pool = '".$pool."' and  ((price_from < ".$price.") or (price_from =  ".$price.")) and ((price_to >".$price.") or (price_to = ".$price."))";
+	     $sql = "select uid, email from user where property_type = ".$type." and beds = '".$beds."' and baths = '".$baths."' and pool = '".$pool."' and  ((price_from < ".$price.") or (price_from =  ".$price.")) and ((price_to >".$price.") or (price_to = ".$price."))";
 		 $client_list = Yii::app()->db->createCommand($sql)->queryAll();
 		 if(count($client_list)>0)
 		 {
              foreach($client_list as $client) 
 			 {
-                echo "Send pm to user ".$client['uid']." <br/>"; 
+				 echo "Send email to user ".$client['uid']." <br/>"; 
+				 $modelEmail=new Email;
+				 $modelEmail->send_date = date('Y-m-d');
+				 $modelEmail->from_uid = $uid;
+				 $modelEmail->setAttribute('to_uid', $client["uid"]);
+				 $modelEmail->title = "New Property recommendation";
+				 $modelEmail->contents = 'Your realtor has created a new listing on MRT, you migh find it interesting:<br/><br/><a href="'.Yii::app()->request->hostInfo.'/property/'.$pid.'">Click here to view it</a>';
+				 $modelEmail->attachments = '';
+				 $modelEmail->save();
+
+				 $toEmailArrary = array($client["email"]);
+				 $content_new = 'Your realtor has created a new listing on MRT, you migh find it interesting:<br/><br/><a href="'.Yii::app()->request->hostInfo.'/property/'.$pid.'">Click here to view it</a>';
+				 $returnCode = $this->sendemail($fromEmail,$fromName,$toEmailArrary,$modelEmail->title,$content_new,$modelEmail->attachments);
 			 }
 		 }
-
-		 echo $sql;
-		 exit();
 	 }
 
 
