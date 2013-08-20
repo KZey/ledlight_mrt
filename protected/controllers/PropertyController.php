@@ -220,8 +220,10 @@ class PropertyController extends Controller
 		/*****inbox end***/
 
 		
+		$userType = Yii::app()->user->type;
 		$this->render('view',array(
 			'model'=>$model,'modelUser'=>$modelUser,'modelEmail'=>$email[0],'hidden_to_uid'=>$email[1],
+			'userType' => $userType,
 			'modelInbox'=>$modelInbox,
 		));
 	}

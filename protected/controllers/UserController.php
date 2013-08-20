@@ -1698,8 +1698,10 @@ class UserController extends Controller
 						 'pageSize'=>5
 						 ),
 					 ));
+		 $userType = Yii::app()->user->type;
 		 $this->render('r_otherview',array(
 					 'model'=>$model,'modelContact'=>$modelContact,'check_repeat'=>$check_repeat,'dataProvider'=>$dataProvider,'subscribe_show'=>$subscribe_show,
+					 'userType'=>$userType,
 					 'hidden_to_uid'=>$hidden_to_uid,'modelInbox'=>$modelInbox,'realtor_uid'=>$uid,'subscribe_status'=>$subscribe_status,
 					 ));
 	 }
