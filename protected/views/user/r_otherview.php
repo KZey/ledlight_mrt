@@ -39,8 +39,8 @@ $this->pageTitle=$model->first_name.' '.$model->last_name.'-'.'Agent'.'-'.Yii::a
 			<div style="margin-top: 0px;">
 				
 				<div style="float:left;height:30px;margin-top: 15px;">
-				
-<?php //if(!empty($model->facebook_uname)){?>
+
+<!--- facebook like button -->
 <div style="float:left;">
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -50,18 +50,25 @@ $this->pageTitle=$model->first_name.' '.$model->last_name.'-'.'Agent'.'-'.Yii::a
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+<div class="fb-like" data-href="http://www.myrealtour.com/index.php/user/rotherview?uid=<?php echo $model->uid?>" data-wid    th="450" data-show-faces="false" data-send="false"></div>
 </div>
-<?php //}?>
+
+
+
+<!-- facebook follow button-->
+<div class="fb-follow" data-width="450" data-colorscheme="light" data-layout="standard" data-show-faces="false"></div>
+
 <?php if(!empty($model->twitter_uname)){?>
 <div style="float:left;">&nbsp;
 <a href="https://twitter.com/<?php echo $model->twitter_uname;?>" class="twitter-follow-button" data-show-screen-name="false" data-lang="en">Follow @<?php echo $model->twitter_uname;?></a>
+
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
 <?php }?>		
 
 				</div>
 				<div class="clear"></div>
+				<br/>
 				<div style="float:left;margin-top:5px;">
 					<?php 
 // 						if($check_repeat==0 && Yii::app()->user->id != $model->uid){
@@ -181,3 +188,16 @@ function check_subscribe(status)
 	});
 }
 </script>
+
+
+<!---
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=403927466287238";
+			  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+---->
