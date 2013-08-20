@@ -1,0 +1,291 @@
+.shadow{-moz-box-shadow:10px 10px 10px rgba(0,0,0,.4); -webkit-box-shadow:10px 10px 10px rgba(0,0,0,.4); box-shadow:10px 10px 10px rgba(0,0,0,.4);}
+.target_box{width:500px; padding:10px; border: 5px solid #dedede; background-color:#fff;border-radius: 10px;}
+.target_list{padding:4px; border-bottom:1px dotted #ddd; overflow:hidden; _zoom:1;}
+.target_list a{width:22px; line-height:20px; margin-right:5px; padding:1px; color:#333; font-size:12px; text-align:center; text-decoration:none; float:left;}
+.target_list a:hover{padding:0; border:1px solid #ddd; color:#cd0000;}
+.target_more{margin-top:-20px;}
+
+.target_fixed{height:25px; padding:1px; position:fixed; _position:absolute; top:0; right:0;}
+.custom_container{position:absolute; background-color:rgba(0, 0, 0, .5); background-color:#999\9;}
+.custom_container img{padding:0; position:relative; top:-5px; left:-5px;}
+.dn{display:none;}.db{display:block;}
+
+.box-shadow2{
+	-moz-box-shadow:-5px -5px 5px #999 inset;             /* For Firefox3.6+ */
+	-webkit-box-shadow:-5px -5px 5px #999 inset;          /* For Chrome5+, Safari5+ */
+	box-shadow:-5px -5px 5px #999 inset;                  /* For Latest Opera */
+}
+
+.php-calendar a {
+  color: black;
+}
+
+.php-calendar a:hover {
+  color: gray;
+}
+
+.php-calendar h1 {
+  text-align: center;
+  color: black;
+}
+
+.php-calendar h2 {
+  text-align: center;
+  color: black;
+}
+
+.php-calendar input[type="submit"] {
+  background-color: silver;
+  color: black;
+  border: 1px solid black;
+}
+
+.php-calendar input[type="submit"]:hover {
+  background-color: black;
+  color: silver;
+}
+
+.phpc-navbar a {
+  text-decoration: underline;
+  margin: 0 .5em;
+}
+
+.phpc-navbar a:hover {
+  color: gray;
+}
+
+.phpc-navbar {
+  margin: .5em 0;
+  text-align: center;
+  border: 1px solid black;
+  background-color: #99CC33;
+  padding: 4px;
+}
+
+.phpc-month-nav a {
+  text-decoration: underline;
+  margin: 0 .2em;
+}
+
+.phpc-month-nav {
+  margin: .5em 0;
+  text-align: center;
+  padding: 2px;
+}
+
+.phpc-month-nav .php-present {
+  background: #99cc00;
+}
+
+.php-calendar table {
+  border-collapse: collapse;
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.php-calendar td, .php-calendar th {
+  border: 1px solid #666;
+
+}
+
+.phpc-container {
+  min-width: 50%;
+}
+
+table.phpc-main {
+  width: 100%;
+}
+
+div.phpc-main {
+  padding: 0;
+}
+
+.phpc-main h2 {
+  text-align: left;
+  margin: 0;
+  background-color: white;
+  padding: 2px .5em; 
+}
+
+.phpc-main div {
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+.phpc-event {
+  border: 2px solid black;
+  color: black;
+  background-color: #CCC;
+  margin: 0;
+  padding: .5em;
+}
+
+.phpc-event-header {
+  border: 1px solid black;
+  background-color: #AAA;
+  padding: .5em;
+}
+
+.phpc-desc {
+  padding: .5em;
+  margin: 0;
+  text-align: justify;
+}
+
+.php-calendar caption {
+  font-size: 175%;
+  color: black;
+  background-color: white;
+  padding: 2px;
+  font-weight: bolder;
+  margin: 1px;
+}
+
+.php-calendar thead {
+  color: black; 
+}
+.php-calendar thead tr th{
+  color: black; background-color: #99CC33;
+}
+.php-calendar tfoot {
+  text-align: center;
+}
+
+.phpc-calendar {
+  table-layout: fixed;
+}
+
+.phpc-calendar td, .phpc-calendar th {
+  border-collapse: collapse;
+}
+
+.phpc-calendar td {
+  text-align: left;
+  height: 80px;
+}
+
+td.phpc-past {
+  background-color: #fff;
+  padding: 0;vertical-align:top;
+}
+
+td.phpc-future {
+  background-color: white;
+  padding: 0;vertical-align:top;
+}
+
+td.phpc-present {
+  background-color: #fff;
+  padding: 0;vertical-align:top;
+}
+
+td.phpc-none {
+  background-color: #fff;
+  padding: 0; vertical-align:top;
+}
+
+.phpc-main ul {
+  margin: 2px;
+  padding: 0;
+  list-style-type: none;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px 1px 0 1px;
+}
+
+.phpc-main li a {
+  display: block;
+  font-size: 80%;
+  font-weight: normal;
+  border-color: black;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  margin: 0;
+  background-color: white;
+  text-decoration: none;
+  padding: 2px;
+}
+
+.phpc-main li a:hover {
+  background-color: #99CC33;
+  color: black;
+}
+
+.phpc-footer {
+  text-align: center;
+}
+
+.phpc-button {
+  text-align: center;
+}
+
+.phpc-add {
+  float: right;cursor:pointer;
+  text-align: right;
+}
+
+#phpc-summary-view {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: solid 2px black; 
+  width: 300px;
+  max-height: 250px;
+  overflow: hidden;
+  padding: 5px;
+  z-index:1;
+}
+
+.phpc-summary-head {
+  border-bottom: solid 1px black;
+}
+
+.form table {
+  width: 100%;
+}
+
+.phpc-none .phpc-date {
+  background-color: #fff;
+}
+
+.phpc-past .phpc-date {
+  background-color: #fff;
+}
+
+.phpc-present .phpc-date {
+  background-color: #fff;
+}
+
+.phpc-future .phpc-date  {
+  background-color: #fff;
+}
+
+td.form-color {
+  padding: 2px;
+  width: 20px;
+  height: 20px;
+  border-style: none;
+}
+
+td.form-color-selected {
+  border: 2px dotted #000000;
+  padding: 0;
+}
+
+.phpc-message {
+  position: fixed;
+  background-color: #EED055;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.25em;
+  padding: 0.5em 1em;
+  border-style: solid;
+  border-color: #666;
+  border-width: 0 0 1px 0;
+}
+
+/* \*/ /*/
+  .phpc-calendar { table-layout: auto; }
+/* */

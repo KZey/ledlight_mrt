@@ -1,0 +1,1 @@
+qq===<?php echo Yii::app()->user->first_name.', '.Yii::app()->user->last_name;?>

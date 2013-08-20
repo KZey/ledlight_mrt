@@ -1,0 +1,72 @@
+Production Server:
+host: randr-11.nationalnet.com
+user: sig
+pass: YMsGBEQtUzqPN
+port 33654
+
+Myrealtour.com
+
+      FTP/SSH Client: sig
+
+      FTP/SSH pw: YMsGBEQtUzqPN
+
+ 
+
+      database: myrealtour
+
+      user: myrealtour
+
+      pass: mZcKRaswb2uTJ
+
+
+
+
+-------------------------------------
+
+SIG Server and Test Server:
+
+Ticket support:
+
+    http://www.mojohost.com/support/
+    User: sig_wei
+    Password: vU7U8echAtE5
+
+ 
+
+SSH 
+
+    SSH host: cs278.mojohost.com 
+    User: sig_ssh 
+    Password: s96W5xespEha 
+
+ 
+
+FTP 
+
+    FTP host: cs278.mojohost.com 
+    FTP name: magnum_ftp 
+    FTP pass: tr6zunutrEfr
+
+ 
+
+phpMyAdmin:
+
+    Mysql host: http://cs278.mojohost.com/cD3wczT1Cu5n 
+    Username: AX0nnytFUEAi
+    Password: Ie8oirOG6l2kEszY
+
+MRTDEV DB:
+
+    DB NAME : mrtdev
+    DB USER : mrtdev
+    DB PWD : pAswu8upra4A
+
+MRT DB:
+
+    DB Name: mrt
+    DB user: mrt_db
+    DB pass: yu2mY7rertNu
+
+
+
+

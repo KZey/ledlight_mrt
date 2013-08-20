@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/watch/!svn/ver/10/web/wwwroot/protected/gii/adminCrud/templates/custom
+END
+view.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/watch/!svn/ver/10/web/wwwroot/protected/gii/adminCrud/templates/custom/view.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/watch/!svn/ver/10/web/wwwroot/protected/gii/adminCrud/templates/custom/_form.php
+END
+update.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/watch/!svn/ver/10/web/wwwroot/protected/gii/adminCrud/templates/custom/update.php
+END
+controller.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/watch/!svn/ver/10/web/wwwroot/protected/gii/adminCrud/templates/custom/controller.php
+END
+_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/watch/!svn/ver/10/web/wwwroot/protected/gii/adminCrud/templates/custom/_search.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/watch/!svn/ver/10/web/wwwroot/protected/gii/adminCrud/templates/custom/index.php
+END
+add.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/watch/!svn/ver/10/web/wwwroot/protected/gii/adminCrud/templates/custom/add.php
+END

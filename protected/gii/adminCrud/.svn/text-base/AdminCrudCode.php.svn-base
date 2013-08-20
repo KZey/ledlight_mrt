@@ -1,0 +1,209 @@
+<?php
+Yii::import('system.gii.generators.crud.CrudCode');
+
+class AdminCrudCode extends CrudCode
+{
+	public $modulePath='application';
+
+	public function rules()
+	{
+		return array_merge(parent::rules(), array(
+			array('model, controller, modulePath', 'filter', 'filter'=>'trim'),
+			array('model, controller, modulePath, baseControllerClass', 'required'),
+			array('model', 'match', 'pattern'=>'/^\w+[\w+\\.]*$/', 'message'=>'{attribute} should only contain word characters and dots.'),
+			array('controller', 'match', 'pattern'=>'/^\w+[\w+\\/]*$/', 'message'=>'{attribute} should only contain word characters and slashes.'),
+			array('modulePath', 'match', 'pattern'=>'/^(\w+[\w\.]*|\*?|\w+\.\*)$/', 'message'=>'{attribute} should only contain word characters, dots, and an optional ending asterisk.'),
+			array('baseControllerClass', 'match', 'pattern'=>'/^\w+$/', 'message'=>'{attribute} should only contain word characters.'),
+			array('modulePath', 'validateModulePath', 'skipOnError'=>true),
+			array('model', 'validateModel'),
+			array('modulePath, baseControllerClass', 'sticky'),
+		));
+	}
+
+	public function attributeLabels()
+	{
+		return array_merge(parent::attributeLabels(), array(
+			'modulePath'=>'Module Path',
+		));
+	}
+
+	public function validateModulePath($attribute,$params)
+	{
+		if(Yii::getPathOfAlias($this->modulePath)===false)
+			$this->addError('modulePath','Module Path must be a valid path alias.');
+	}
+	
+	public function prepare()
+	{
+		$this->files=array();
+		$templatePath=$this->templatePath;
+		$controllerTemplateFile=$templatePath.DIRECTORY_SEPARATOR.'controller.php';
+
+		$this->files[]=new CCodeFile(
+			$this->controllerFile,
+			$this->render($controllerTemplateFile)
+		);
+
+		$files=scandir($templatePath);
+		foreach($files as $file)
+		{
+			if(is_file($templatePath.'/'.$file) && CFileHelper::getExtension($file)==='php' && $file!=='controller.php')
+			{
+				$this->files[]=new CCodeFile(
+					$this->viewPath.DIRECTORY_SEPARATOR.$file,
+					$this->render($templatePath.'/'.$file)
+				);
+			}
+		}
+	}
+
+//	public function getModelClass()
+//	{
+//		return ucfirst($this->_modelClass);
+//	}
+	
+	public function getModule()
+	{
+		if(($pos=strrpos($this->modulePath,'.'))!==false)
+		{
+			$id=substr($this->controller,$pos+1);
+			if(($module=Yii::app()->getModule($id))!==null)
+				return $module;
+		}
+		else
+		{
+			if(($module=Yii::app()->getModule($this->modulePath))!==null)
+				return $module;
+		}
+		return Yii::app();
+	}
+	
+	public function getControllerID()
+	{
+		$id=$this->controller;
+		
+		if(($pos=strrpos($id,'/'))!==false)
+			$id[$pos+1]=strtolower($id[$pos+1]);
+		else
+			$id[0]=strtolower($id[0]);
+		return $id;
+	}
+	
+    public function class2id($name)
+	{
+		return trim(strtolower(str_replace('-','_',preg_replace('/(?<![A-Z])[A-Z]/', '-\0', $name))),'_');
+	}
+	
+	/**
+	 * 生成数据列的label key
+	 * @param unknown_type $table
+	 */
+    public function generateColumnLabel($column)
+	{
+		return ucwords(trim(strtolower(str_replace(array('-','_'),' ',preg_replace('/(?<![A-Z])[A-Z]/', ' \0', $column->name)))));
+	}
+	
+    public function generateInputField($modelClass,$column)
+	{
+		if($column->type==='boolean')
+			return "CHtml::activeCheckBox(\$model,'{$column->name}',array('class'=>\$model->isAttributeRequired('{$column->name}') ? 'required' : ''))";
+		else if(stripos($column->dbType,'text')!==false)
+			return "CHtml::activeTextArea(\$model,'{$column->name}',array('rows'=>6, 'cols'=>50,'class'=>\$model->isAttributeRequired('{$column->name}') ? 'required' : ''))";
+		else
+		{
+			if(preg_match('/^(password|pass|passwd|passcode)$/i',$column->name))
+				$inputField='activePasswordField';
+			else
+				$inputField='activeTextField';
+
+			if($column->type!=='string' || $column->size===null)
+				return "CHtml::{$inputField}(\$model,'{$column->name}',array('class'=>\$model->isAttributeRequired('{$column->name}') ? 'required' : ''))";
+			else
+			{
+				return "CHtml::{$inputField}(\$model,'{$column->name}',array('class'=>\$model->isAttributeRequired('{$column->name}') ? 'required' : '','alt'=>Html::inputTips('{$modelClass}','{$this->generateColumnLabel($column)}')))";
+			}
+		}
+	}
+	
+    public function generateActiveField($modelClass,$column)
+	{
+		if($column->type==='boolean')
+			return "\$form->checkBox(\$model,'{$column->name}')";
+		else if(stripos($column->dbType,'text')!==false)
+			return "\$form->textArea(\$model,'{$column->name}',array('rows'=>6, 'cols'=>50))";
+		else
+		{
+			if(preg_match('/^(password|pass|passwd|passcode)$/i',$column->name))
+				$inputField='passwordField';
+			else
+				$inputField='textField';
+
+			if($column->type!=='string' || $column->size===null)
+				return "\$form->{$inputField}(\$model,'{$column->name}')";
+			else
+			{
+				if(($size=$maxLength=$column->size)>60)
+					$size=60;
+				return "\$form->{$inputField}(\$model,'{$column->name}')";
+			}
+		}
+	}
+	
+    public function generateSearchActiveField($modelClass,$column)
+	{
+	    $forid = "array('id'=>Html::searchId(\$model,'{$column->name}'))";
+		if($column->type==='boolean')
+			return "\$form->checkBox(\$model,'{$column->name}',{$forid})";
+		else if(stripos($column->dbType,'text')!==false)
+			return "\$form->textArea(\$model,'{$column->name}',array('id'=>Html::searchId(\$model,'{$column->name}'),'rows'=>6, 'cols'=>50))";
+		else
+		{
+			if(preg_match('/^(password|pass|passwd|passcode)$/i',$column->name))
+				$inputField='passwordField';
+			else
+				$inputField='textField';
+
+			if($column->type!=='string' || $column->size===null)
+				return "\$form->{$inputField}(\$model,'{$column->name}',{$forid})";
+			else
+			{
+				if(($size=$maxLength=$column->size)>60)
+					$size=60;
+				return "\$form->{$inputField}(\$model,'{$column->name}',{$forid})";
+			}
+		}
+	}
+	
+    public function generateAdSearchActiveField($modelClass,$column)
+	{
+	    $forid = "array('id'=>Html::adsearchId(\$model,'{$column->name}'))";
+	    if($column->type==='boolean')
+			return "\$form->checkBox(\$model,'{$column->name}',{$forid})";
+		else if(stripos($column->dbType,'text')!==false)
+			return "\$form->textArea(\$model,'{$column->name}',array('id'=>Html::adsearchId(\$model,'{$column->name}'),'rows'=>6, 'cols'=>50))";
+		else
+		{
+			if(preg_match('/^(password|pass|passwd|passcode)$/i',$column->name))
+				$inputField='passwordField';
+			else
+				$inputField='textField';
+
+			if($column->type!=='string' || $column->size===null)
+				return "\$form->{$inputField}(\$model,'{$column->name}',{$forid})";
+			else
+			{
+				if(($size=$maxLength=$column->size)>60)
+					$size=60;
+				return "\$form->{$inputField}(\$model,'{$column->name}',{$forid})";
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

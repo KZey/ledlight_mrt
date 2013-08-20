@@ -1,0 +1,15 @@
+Test:
+
+Card Not Present Test Account
+
+API Login ID 3GN8smrLd3V
+
+Transaction Key 2ky4838jHEYS9ypZ
+
+
+coder.bj@gmail.com
+
+
+-----------------------------
+
+Prod:

@@ -1,0 +1,236 @@
+.color_cccccc{color:#cccccc;}
+.color_000000{color:#000000;}
+.regirest_form_row
+{
+	border:0px solid red;
+	height:30px;
+}
+.regirest_form_row li
+{
+	list-style:none;float:left;
+	border:0px solid red;padding-top:5px;
+}
+.regirest_form_row_li_1
+{
+	width:160px;text-align:right;
+}
+.regirest_form_row_li_2
+{
+	width:200px;margin-left:10px;
+}
+.regirest_form_row_li_3
+{
+	margin-left:170px;
+}
+.regirest_form_row_li_3_index
+{
+	margin-left:160px;
+}
+
+.invite_form_row_li_3
+{
+	margin-left:120px;
+}
+/*** search_property start***/
+.search_property_row
+{
+	border:0px solid red;
+	height:55px;clear:both;
+}
+.search_property_row li
+{
+	list-style:none;float:left;
+	border:0px solid red;
+}
+.search_property_row_li_1
+{
+	width:140px;text-align:right;float:left;
+}
+.search_property_row_li_2
+{
+	width:222px;margin-left:10px;float:left;
+}
+.search_property_row_li_3
+{
+	width:200px;margin-left:110px;
+}
+/*** search_property end***/
+
+
+/*** close_property start***/
+.close_property_row
+{
+	border:0px solid red;
+	height:40px;clear:both;
+}
+.close_property_row li
+{
+	list-style:none;float:left;
+	border:0px solid red;
+}
+.close_property_row_li_1
+{
+	width:140px;text-align:right;float:left;margin-top:8px;
+}
+.close_property_row_li_2
+{
+	width:222px;margin-left:10px;float:left;
+}
+.close_property_row_li_3
+{
+	width:200px;margin-left:110px;
+}
+/*** close_property end***/
+
+
+
+.send_email_form_row
+{
+overflow:hidden;
+	
+}
+.send_email_form_row li
+{
+	list-style:none;float:left;
+}
+.send_email_form_row_li_1
+{
+	width:75px;padding-top:5px;
+}
+.send_email_form_row_li_2
+{
+	width:350px;margin-left:10px;
+}
+.send_email_form_row_li_3
+{
+	margin-left:85px;
+}
+
+
+.submitButton
+{
+	background:url(/images/createAccountBtn.png);border:0;width:148px;height:40px;cursor:pointer;
+}
+
+.regirest_form_header
+{
+	width:409px;margin-left:3px;color:#fff;font-weight:bold;font-size:19px;text-align:center;
+}
+.regirest_form_header_1
+{
+	background:url(/images/regirest_form_bg_1.png);width:202px;height:43px;cursor:pointer;
+}
+.regirest_form_header_2
+{
+	background:url(/images/regirest_form_bg_2.png);width:203px;height:37px;cursor:pointer;
+}
+
+input[type="text"]
+{
+	border:1px solid #cccccc;
+}
+input[type="password"]
+{
+	border:1px solid #cccccc;
+}
+textarea
+{
+	border:1px solid #cccccc;
+}
+
+#login_cont
+{
+	position:relative;
+	
+}
+.regirest_label
+{
+	height:25px;padding-top:3px;font-size:15px;font-weight:bold;
+}
+.regirest_text
+{
+	height:25px;font-size:14px;
+}
+#login_frame
+{
+/*	background:white url(bg.gif) repeat-x left top;*/
+	
+	position:absolute;
+	top: 10px;
+	width:520px;
+	z-index:999;
+	margin-left:430px;
+	/*background-color:#f4f8fb;*/
+}
+
+#username_frame
+{
+/*	background:white url(bg.gif) repeat-x left top;*/
+	
+	width:160px; 
+	height:40px;
+	float:left;
+	/*background-color:#f4f8fb;*/
+}
+
+#pwd_frame
+{
+/*	background:white url(bg.gif) repeat-x left top;*/
+	
+	width:200px; 
+	height:40px;
+	float:left;
+	/*background-color:#f4f8fb;*/
+}
+
+#btn_frame
+{
+/*	background:white url(bg.gif) repeat-x left top;*/
+	
+	width:40px; 
+	height:40px;
+	float:left;
+	bottom:0px; 
+	/*background-color:#f4f8fb;*/
+}
+
+#auto_frame
+{
+/*	background:white url(bg.gif) repeat-x left top;*/
+	
+	width:160px; 
+	float:left;
+	bottom:0px;
+
+	/*background-color:#f4f8fb;*/
+}
+
+#link_frame
+{
+/*	background:white url(bg.gif) repeat-x left top;*/
+	
+	width:100px; 
+	float:left;
+	bottom:0px;
+	color:#ffffff;
+
+	/*background-color:#f4f8fb;*/
+}
+
+
+
+#login_content
+{
+/*	position:relative;*/
+background-image:url(../images/loginContent.png);
+background-color:#7cbfea;
+width:623;
+height:488;
+}
+
+#create_btn
+{
+	position:absolute;
+	top:300;
+	left:200;
+}

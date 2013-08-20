@@ -1,0 +1,81 @@
+/* reset */
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0;}
+em{font-style:normal;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%;text-align:left;}
+a:focus{outline:none;}
+.clearfix:after{content:'.';display:block;visibility:hidden;height:0;line-height:0;font-size:0;clear:both;}
+.clearfix{zoom:1;}
+
+/*
+***************
+global
+***************
+*/
+/* base */
+body {font:12px/1.5em Arial;color:#393939;}
+a {color:#3578AC;text-decoration:underline;}
+a:hover {color:#3578AC;text-decoration:underline;}
+a,
+input,
+textarea
+{outline:none;}
+.doc1 {width:950px;margin:0 auto;}
+.hd {padding-top:10px;}
+.logo{float:left;}
+.logo a {display:block;background-position:0 0;width:237px;height:72px;text-indent:-999em;overflow:hidden;}
+.login {float:right;width:430px;padding-top:10px;}
+.hd-row {color:#999;padding-bottom:10px;}
+.login .hd-row.row1{position:relative;zoom:1;}
+.login .hd-row.row2 input{*margin-left:-3px;}
+.input-s {color:#A2A2A2;padding:0 8px;width:130px;padding:7px 10px 5px;border:1px solid #E2E2E2;background-color:#FFF;margin-right:20px;}
+.login-btn {position:absolute;top:0;right:0;width:85px;height:31px;padding-top:31px;border:0;background:none;background-position:-300px 0;}
+.hd-checkbox {display:inline-block;vertical-align:middle;width:16px;height:16px;background-position:-300px -40px;cursor:pointer;}
+.hd-row span,
+.hd-row a {display:inline-block;vertical-align:middle;}
+.hd-row input {vertical-align:middle;}
+.hd-row a {margin-left:80px;}
+.banner {position:relative;left:-30px;width:980px;height:371px;background-position:-3px -168px;}
+.banner h2 {color:#000;font-size:20px;font-family:'Arial Black';padding-bottom:5px;}
+.banner .txt {color:#444;width:433px;height:111px;padding:61px 0 0 91px;overflow:hidden;}
+.banner .txt1 {}
+.banner .txt2 {padding-top:26px;}
+.banner .download {position:absolute;top:41px;left:729px;width:201px;height:70px;background-position:0 -675px;text-indent:-999em;overflow:hidden;}
+.banner .play1,
+.banner .play2 {position:absolute;top:230px;left:602px;width:50px;height:50px;text-indent:-999em;overflow:hidden;}
+.banner .play2 {top:126px;left:777px;width:104px;height:104px;}
+.create {padding:20px 0;margin:0 0 10px 0;background-color:#F1F1F1;}
+.create .cr {float:left;width:467px;height:139px;margin-left:5px;background-position:0 -890px;}
+.create .cr2 {background-position:-500px -890px;}
+.create .cr h2 {height:28px;margin-bottom:20px;text-indent:-999em;overflow:hidden;}
+.create .cr a {float:left;_display:inline;text-align:center;font-size:20px;line-height:24px;text-decoration:none;font-family:'Arial Black';color:#A2A2A2;text-align:center;width:188px;padding-top:80px;height:0;margin:0 11px 0 26px;overflow:hidden;}
+.create .cr a:hover {color:#999;}
+ul.list {background-color:#F1F1F1;padding-bottom:10px;}
+.list li {float:left;_display:inline;width:302px;height:188px;background-position:-500px -560px;margin:8px 7px;}
+.list li h2 {width:267px;height:32px;margin:12px auto 5px;background-position:0 -90px;text-indent:-999em;overflow:hidden;}
+.list li.title2 h2 {background-position:-300px -90px;}
+.list li.title3 h2 {background-position:-600px -90px;}
+.list li.title4 h2 {background-position:0 -125px;}
+.list li.title5 h2 {background-position:-300px -125px;}
+.list li.title6 h2 {background-position:-600px -125px;}
+.list li p {line-height:17px;color:#474747;padding:0 5px 0 10px;}
+.ft {position:relative;color:#979797;text-align:center;padding:20px 0;border-top:1px solid #CDCDCD;background-position:center -774px;zoom:1;}
+.ft .c {position:absolute;top:18px;left:14px;}
+.ico-tel {display:inline-block;vertical-align:middle;width:10px;height:16px;background-position:-302px -61px;margin-right:5px;}
+
+/* images */
+body {background-image:url(../images/bg.png);background-repeat:repeat;}
+.logo a,
+.login-btn,
+.hd-checkbox,
+.banner,
+.create .cr,
+.list li h2,
+.list li,
+.ico-tel,
+.ft,
+.banner .download
+{background-image:url(../images/sp.jpg);background-repeat:no-repeat;}
