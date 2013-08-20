@@ -1246,6 +1246,12 @@ class UserController extends Controller
 	 }
 
 
+	 /*
+	  *
+	  * @author:        Zhao Peng
+	  * @description:   To send emails to the agent's clients whose profile-setting fit the listing properties.
+	  *
+	  */
 	 public function actionCreatepropertyEmail($uid, $modelProperty)
 	 {
 		 $pid    =  $modelProperty->property_id;
