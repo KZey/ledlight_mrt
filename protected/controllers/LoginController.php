@@ -110,10 +110,20 @@ class LoginController extends Controller
 				//Making the contact relation between the new client and his chosen agent.
 				$client_id = $modelUser->attributes['uid'];
 				$agent_id  = $_POST['agent'];
+				$modelAgent = User::model()->findByPk($agent_id);
+				$to_email   = $modelAgent->email;
+
+
 				$sql="insert into contact (uid_parent,uid_child, type) values(".$client_id.",".$agent_id.", 7)";
 				Yii::app()->db->createCommand($sql)->query();
 				$sql="insert into contact (uid_parent,uid_child, type) values(".$agent_id.",".$client_id.", 1)";
 				Yii::app()->db->createCommand($sql)->query();
+
+				/*****Begin:send email*********/
+				$title = 'New client signed up';
+				$content = $modelUser->attributes['first_name']." ".$modelUser->attributes['last_name']."(".$modelUser->attributes['email'].") joined MyRealTour and chose you as his agent.<br/><br/><a href='http://wwww.,yrealtour.com/user/rotherview?uid=".$client_id."'>View his profile</a>";
+				$returnCode = $this->sendemail('support@myrealtour.com', 'MyRealTour Info',array($to_email),$title,$content,'');
+				/*****End:send email*********/
 
 				$model=new LoginForm;
 				$model->email=$modelUser->email;
@@ -135,7 +145,7 @@ class LoginController extends Controller
 		}
 		/*****regirest form end*****/
 		$this->render('register',array('modelUser'=>$modelUser,
-			  'agentList'=>$agentList, 'type'=>$type, 'header_class_1'=>$header_class_1,'header_class_2'=>$header_class_2));
+					'agentList'=>$agentList, 'type'=>$type, 'header_class_1'=>$header_class_1,'header_class_2'=>$header_class_2));
 	}
 
 	/*
