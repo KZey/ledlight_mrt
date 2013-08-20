@@ -1,11 +1,3 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 <?php
 $this->pageTitle=$model->title.'-'.'Property'.'-'.Yii::app()->name;
 $arr_photos = '';
@@ -161,14 +153,20 @@ var mygallery2=new simpleGallery({
 							 -->
 								<?php }?>
 						</div>
+
 						<?php if($model->non_listing != 1){?>
+						
+
 						<div style="border:0px solid red;margin:5px 0 0 5px;">
 							<img src="/images/blue_bg.png" border=0 /><br/>
 							<a href="https://twitter.com/intent/tweet?text=Check out this property listing on MyRealTour.com: http://myrealtour.com/property/<?php echo $model->property_id;?>" class="twitter-share-button" count="none" data-lang="en">11111Twitter</a>
+							<div class="fb-like" data-href="http://www.myrealtour.com/property/<?php echo $model->property_id;?>" data-width="450" data-show-faces="false" data-send="false"></div><!---facebook like button--->
+
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <div class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
 						</div>
 						<?php }?>
+					    
 					</div>
 					
 				</div>
@@ -701,3 +699,16 @@ function show_video(flv_url)
 	$("#div_video_id").zxxbox({title:'Property Video',drag:true,width:600}); 
 }
   </script>
+
+  <div id="fb-root"></div>
+  <script>
+  (function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=403927466287238";
+   fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
