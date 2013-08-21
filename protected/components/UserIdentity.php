@@ -39,8 +39,10 @@ class UserIdentity extends CUserIdentity
 		}
 		else if(md5($this->password)!==$user->pwd)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-// 		else if($user->status==0)
-// 			$this->errorCode=self::ERROR_STATUS_BANNED;
+ 		else if($user->status==0)
+ 			$this->errorCode=self::ERROR_STATUS_BANNED;
+		else if($user->status==2)
+			$this->errorCode=self::ERROR_STATUS_BANNED;
 		else {
 			$this->_id=$user->uid;
 			$this->username=$user->email;
