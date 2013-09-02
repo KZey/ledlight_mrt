@@ -394,12 +394,17 @@ class UserController extends Controller
 			 $model->type = $_POST['type'];
 			 $model->pwd = md5($model->pwd);
 			 $model->repwd = md5($model->repwd);
-			 if($model->save())
+			 if($model->save(false))
 			 {
 				 Yii::app()->user->setFlash('success',Yii::t('User','change_pwd_ok'));
 				 $this->redirect(array('Changepwd'));
 				 Yii::app()->end();
 			 }
+			 else{
+				 Yii::app()->user->setFlash('success',Yii::t('User','fail to change?'));
+				 $this->redirect(array('Changepwd'));
+				 Yii::app()->end();
+				 }
 		 }
 		 $userType = Yii::app()->user->type;
 		 $this->render('changepwd',array(
