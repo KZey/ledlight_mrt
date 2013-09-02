@@ -11,7 +11,8 @@
 			 <div style="float: right;width:99%;margin-bottom:15px;">
 				<div id="r_index" class="rindex_right_list_2"><div><img src="/images/rindex_right_list_1.png" /></div></div>
 				<div id="r_nonlisting" class="rindex_right_nonlisting_1"><div><img src="/images/rindex_right_nonlist_2.png" /></div></div>
-				<div id="r_contact" class="rindex_right_contact_2"><div><img src="/images/rindex_right_contact_1.png" /></div></div>
+				<div id="r_contact" class="rindex_right_contact_2"><div><img src="/images/rindex_right_agent_1.png" /></div></div>
+				<div id="r_client" class="rindex_right_prospects_2"><div>    <img src="/images/rindex_right_client_1.png" /></div></div>
 				<div id="r_prospects" class="rindex_right_prospects_2"><div><img src="/images/rindex_right_prospects_1.png" /></div></div>
 			</div>
 			<div id="r_index_content" style="float: right;width:99%;">
@@ -64,6 +65,7 @@ $(function() {
 	$("#r_index").click(function(){location.href="/user/rindex";});
 	$("#r_contact").click(function(){location.href="/user/rcontact";});
 	$("#r_nonlisting").click(function(){location.href="/user/rnonlisting";});
+	$("#r_client").click(function(){location.href="/user/rclient";});
 	$("#r_prospects").click(function(){location.href="/user/rprospects";});
 });
 

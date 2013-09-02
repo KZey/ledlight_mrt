@@ -21,9 +21,9 @@
 			 <div style="float: left;width:98%;margin-left:10px;margin-bottom:15px;">
 				<div id="r_index" class="rindex_right_list_2"><div><img src="/images/rindex_right_list_1.png" /></div></div>
 				<div id="r_nonlisting" class="rindex_right_nonlisting_2"><div><img src="/images/rindex_right_nonlist_1.png" /></div></div>
-				<div id="r_contact" class="rindex_right_contact_1"><div><img src="/images/rindex_right_contact_2.png" /></div></div>
+				<div id="r_contact" class="rindex_right_contact_1"><div><img src="/images/rindex_right_agent_2.png" /></div></div>
+				<div id="r_client" class="rindex_right_prospects_2"><div>    <img src="/images/rindex_right_client_1.png" /></div></div>
 				<div id="r_prospects" class="rindex_right_prospects_2"><div><img src="/images/rindex_right_prospects_1.png" /></div></div>
-				<div id='r_prospects' class='rindex_right_contact_2'><a href='/user/rclient/'>CLIENTS</a></div>
 				</div>
 			<div id="r_index_content" style="float: left;width:98%;margin-left:10px;">
 					<?php $this->widget('zii.widgets.CListView', array(
@@ -46,6 +46,7 @@ $(function() {
 	$("#r_index").click(function(){location.href="/user/rindex";});
 	$("#r_contact").click(function(){location.href="/user/rcontact";});
 	$("#r_nonlisting").click(function(){location.href="/user/rnonlisting";});
+	$("#r_client").click(function(){location.href="/user/rclient";});
 	$("#r_prospects").click(function(){location.href="/user/rprospects";});
 });
 </script>

@@ -718,9 +718,13 @@ class UserController extends Controller
 		 $dataProvider=null;
 		 if(!empty(Yii::app()->user->id))
 		 {
-			 $sql="select user.uid as id,user.* from 
-				 (select uid_child from contact where uid_parent=".Yii::app()->user->id." and type = 7) as b 
-				 left join user on b.uid_child=user.uid ";
+			 $sql="select user.uid as id,user.* from user, contact 
+			       where 
+				      contact.uid_parent=".Yii::app()->user->id." 
+					  and contact.type = 7 
+					  and user.uid = contact.uid_child
+					"; 
+
 			 $rs_1=Yii::app()->db->createCommand($sql)->queryAll();
 			 $count=count($rs_1);
 			 $dataProvider=new CSqlDataProvider($sql, array(
@@ -755,9 +759,13 @@ class UserController extends Controller
 		 $dataProvider=null;
 		 if(!empty(Yii::app()->user->id))
 		 {
-			 $sql="select user.uid as id,user.* from 
-				 (select uid_child from contact where uid_parent=".Yii::app()->user->id." and type = 1) as b 
-				 left join user on b.uid_child=user.uid ";
+             $sql="select user.uid as id,user.* from user, contact 
+                   where 
+                   contact.uid_parent=".Yii::app()->user->id." 
+                   and contact.type = 1 
+                   and user.uid = contact.uid_child
+                   ";
+	  			 
 			 $rs_1=Yii::app()->db->createCommand($sql)->queryAll();
 			 $count=count($rs_1);
 			 $dataProvider=new CSqlDataProvider($sql, array(
