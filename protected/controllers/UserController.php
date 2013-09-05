@@ -270,7 +270,7 @@ class UserController extends Controller
 			 $model->pwd = $model->repwd = $pwd_old;
 			 $model->logo = isset($_POST['hidden_logo']) ? $_POST['hidden_logo'] : $logo_old;
 
-			 if($model->save())
+			 if($model->save(false))
 			 {
 				 Yii::app()->user->setFlash('Rupdate_success',Yii::t('User','edit_profile_ok'));
 				 $this->refresh();

