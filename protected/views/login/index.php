@@ -4,6 +4,7 @@
    
     <div class="bd">
         <div class="banner">
+            <!--
             <div class="txt txt1">
                 <h2>BROADCAST YOUR LISTINGS LIVE!</h2>
                 <p>
@@ -16,6 +17,7 @@
                 You’ve heard the saying, “a picture is worth a thousand words”. That’s true and great, but what’s even better than a picture? That’s right, video. These days videos are the standard when it comes to getting a good picture of some thing or some place. If a picture’s worth a thousand words, a video is worth a million words. So stop shuffling through pictures and get with the video!
                 </p>
             </div>
+            -->
             <a href="#" class="download" hidefocus="true">download the app</a>
             <!-- 
             <a href="#" class="play1" hidefocus="true">download the app</a>
